@@ -1,0 +1,55 @@
+[package]
+name = "msinks"
+version = "0.1.0"
+authors = ["Usairim Isani <usairim.isani@outlook.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.34"
+async-trait = "0.1.42"
+
+chrono = { version = "0.4.19", features = ["serde"] }
+clap = "3.0.0-beta.2"
+clokwerk = "0.3.4"
+config = "0.10.1"
+ctrlc = "3.1.7"
+
+elasticsearch = "7.10.0-alpha.1"
+
+indexmap = {version = "1.6.1", features = ["serde", "rayon"]}
+
+# futures = "0.3.12"
+# notify = "4.0.15"
+
+# lazy_static = "1.4.0"
+lic_gen = { path = "../lic-gen/lic_gen"}
+log = "0.4.11"
+
+mongodb = "1.1.1"
+
+# parallel-stream = "2.1.2"
+parse_duration = "2.1.0"
+pretty_env_logger = "0.4.0"
+
+# rayon = "1.5.0"
+rdkafka = "0.24.0"
+# regex = "1.4.2"
+# reqwest = { version = "0.10", features = ["blocking", "json"] }
+
+serde = { version = "1.0.116", features = ["derive"] }
+serde_json = "1.0.58"
+
+tokio = { version = "*", features = ["full"] }
+
+warp = "0.2"
+
+
+
+[lib]
+crate-type = ["cdylib","rlib"]
+
+[[bin]]
+name = "ms"
+path = "src/main.rs"

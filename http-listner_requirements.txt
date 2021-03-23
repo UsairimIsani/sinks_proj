@@ -1,0 +1,76 @@
+Https Listner
+
+A https api endpoint to accept soemthing thing that comes into its endpoint.
+After recieving, save it in either (kafka or redis or mongo or elastic or postgresql or sqlite) - Usairim to add/decide
+Must be performance oriented. Rocket or wrap (async) 
+
+One maintenance endpoint (eg: /maintain/) - add api keys & add throttling for these api keys.
+
+Example config Yaml 1:
+endpoint: /endpoint_name
+throtle: 100/min
+sink:
+  type: kafka
+  host: localhost
+  port: 2181
+  topic: a_topic
+License:
+  registered_to: ABC Company
+  subscription_expires: mm/dd/yyyy
+  license_hash: hmac(ABC Company & mm/dd/yyyy)
+
+Example config Yaml 2:
+endpoint: /endpoint_name
+sink:
+  type: mongo
+  host: localhost
+  port: 2181
+  database: db_name
+License:
+  registered_to: ABC Company
+  subscription_expires: mm/dd/yyyy
+  license_hash: hmac(ABC Company & mm/dd/yyyy)
+
+Example config Yaml 3:
+endpoint: /endpoint_name
+sink:
+  type: elastic
+  host: localhost
+  port: 2181
+  index: index_name
+License:
+  registered_to: ABC Company
+  subscription_expires: mm/dd/yyyy
+  license_hash: hmac(ABC Company & mm/dd/yyyy)
+
+Example config Yaml 4:
+endpoint: /endpoint_name
+sink:
+  type: sqlite
+  path: /path/to/file
+  database: db_name
+License:
+  registered_to: ABC Company
+  subscription_expires: mm/dd/yyyy
+  license_hash: hmac(ABC Company & mm/dd/yyyy)
+
+Example config Yaml 5:
+endpoint: /endpoint_name
+sink:
+  type: postgresql
+  host: localhost
+  port: 2181
+  database: db_name
+License:
+  registered_to: ABC Company
+  subscription_expires: mm/dd/yyyy
+  license_hash: hmac(ABC Company & mm/dd/yyyy)
+
+
+Ref crates:
+https://github.com/fede1024/rust-rdkafka
+https://github.com/seanmonstar/warp - supports async
+https://github.com/SergioBenitez/Rocket
+https://github.com/timberio/vector/tree/master/src/sinks
+https://github.com/Cryptolens/cryptolens-rust
+https://docs.rs/clokwerk/0.3.3/clokwerk/

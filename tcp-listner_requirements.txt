@@ -1,0 +1,78 @@
+TCP/S Listner
+
+A tcp/s listner to accept soemthing thing that comes into its endpoint.
+After recieving, save it in either (kafka or redis or mongo or elastic or postgresql or sqlite) - Usairim to add/decide
+Must be performance oriented eg: Vector.
+
+Example config Yaml 1:
+host: localhost (or 127.0.0.1)
+port: 8000
+sink:
+  type: kafka
+  host: localhost
+  port: 2181
+  topic: a_topic
+License:
+  registered_to: ABC Company
+  subscription_expires: mm/dd/yyyy
+  license_hash: hmac(ABC Company & mm/dd/yyyy)
+
+Example config Yaml 2:
+host: localhost (or 127.0.0.1)
+port: 8000
+sink:
+  type: mongo
+  host: localhost
+  port: 2181
+  database: db_name
+License:
+  registered_to: ABC Company
+  subscription_expires: mm/dd/yyyy
+  license_hash: hmac(ABC Company & mm/dd/yyyy)
+
+Example config Yaml 3:
+host: localhost (or 127.0.0.1)
+port: 8000
+sink:
+  type: elastic
+  host: localhost
+  port: 2181
+  index: index_name
+License:
+  registered_to: ABC Company
+  subscription_expires: mm/dd/yyyy
+  license_hash: hmac(ABC Company & mm/dd/yyyy)
+
+Example config Yaml 4:
+host: localhost (or 127.0.0.1)
+port: 8000
+sink:
+  type: sqlite
+  path: /path/to/file
+  database: db_name
+License:
+  registered_to: ABC Company
+  subscription_expires: mm/dd/yyyy
+  license_hash: hmac(ABC Company & mm/dd/yyyy)
+
+Example config Yaml 5:
+host: localhost (or 127.0.0.1)
+port: 8000
+sink:
+  type: postgresql
+  host: localhost
+  port: 2181
+  database: db_name
+License:
+  registered_to: ABC Company
+  subscription_expires: mm/dd/yyyy
+  license_hash: hmac(ABC Company & mm/dd/yyyy)
+
+
+Ref crates:
+https://github.com/fede1024/rust-rdkafka
+https://github.com/seanmonstar/warp - supports async
+https://github.com/SergioBenitez/Rocket
+https://github.com/timberio/vector/tree/master/src/sinks
+https://github.com/Cryptolens/cryptolens-rust
+https://docs.rs/clokwerk/0.3.3/clokwerk/
